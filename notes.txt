@@ -1,0 +1,5 @@
+
+jenkins
+
+user: dzavaleta
+pass: t...
