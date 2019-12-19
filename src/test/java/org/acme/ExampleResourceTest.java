@@ -2,7 +2,6 @@ package org.acme;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
-import org.wildfly.common.Assert;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
@@ -12,7 +11,11 @@ public class ExampleResourceTest {
 
     @Test
     public void testHelloEndpoint() {
-        Assert.assertTrue(true);
+        given()
+          .when().get("/hello")
+          .then()
+             .statusCode(200)
+             .body(is("hello"));
     }
 
 }
